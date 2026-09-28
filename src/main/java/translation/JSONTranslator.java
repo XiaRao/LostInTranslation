@@ -55,6 +55,7 @@ public class JSONTranslator implements Translator {
                     countryCodes.add(countryCode);
                 }
 
+
                 // iterate through the other keys to get the information that we need
                 for (String key : countryData.keySet()) {
                     if (!key.equals("id") && !key.equals("alpha2") && !key.equals("alpha3")) {
@@ -86,7 +87,7 @@ public class JSONTranslator implements Translator {
 
     @Override
     public String translate(String countryCode, String languageCode) {
-        // TODO Task C: complete this method using your instance variables as needed
-        return "JSONTranslator's translate method is not implemented!";
+        String translationsKey = countryCode + "-" + languageCode;
+        return translations.get(translationsKey);
     }
 }
